@@ -1,0 +1,7 @@
+%h1 Welcome in MS-Master
+
+%hr
+= form_for(:helicopter, url: select_path) do |f|
+	= f.collection_select(:id, Helicopter.all, :id, :registration, { prompt: 'Select a helicopter' }, { class: 'form-control' })
+	%br
+	= f.button 'New', class: 'btn btn-primary'

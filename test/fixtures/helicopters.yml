@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  registration: MyString
+  serial_number: 1
+  last_ms: 1
+
+two:
+  registration: MyString
+  serial_number: 1
+  last_ms: 1
