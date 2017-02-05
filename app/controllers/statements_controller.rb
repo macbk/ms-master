@@ -2,6 +2,14 @@ class StatementsController < ApplicationController
 	before_action :find_statement, only: [:show, :edit, :update, :destroy]
 
 	def show
+		respond_to do |format|
+			format.html
+			format.pdf do
+				render pdf: "MaintenanceStatement",
+				template: "statements/show.pdf.haml",
+				locals: {:statement => @statement}
+			end
+		end
 	end
 
 	def new

@@ -1,2 +1,4 @@
 %h4= @statement.helicopter.registration
 %h3= @statement.crs
+
+= link_to 'Create PDF', statement_path(@statement, :format => :pdf)
