@@ -1,4 +1,9 @@
 = form_for(@statement) do |f|
+	- if @statement.errors.any?
+		= pluralize(@statement.errors.count, "error")
+		%ul
+			- @statement.errors.full_messages.each do |msg|
+				%li= msg
 	= f.label :crs
 	%br
 	= f.text_field :crs, class: 'form-control'
@@ -6,4 +11,4 @@
 	%br
 	= f.text_field :sot, class: 'form-control'
 	%br
-	= f.button 'Create MS', class: 'btn btn-primary'
+	= f.submit 'Create MS', class: 'btn btn-primary'

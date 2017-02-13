@@ -2,3 +2,6 @@
 %h3= @statement.crs
 
 = link_to 'Create PDF', statement_path(@statement, :format => :pdf)
+
+= render 'printout'
+%br

@@ -13,3 +13,36 @@
  */
 @import "bootstrap-sprockets";
 @import "bootstrap";
+
+.row {
+	border-bottom:1px solid;
+	display: flex;
+}
+
+.row:first-child {
+	border-top:1px solid;
+}
+
+.row [class*="col-xs"] {
+	border-right: 1px solid;
+	text-align: center;
+	display:flex;
+  	flex-direction:column;
+  	justify-content:center;
+  	.row {
+  		border-top:1px solid;
+  		border-bottom:0px solid;
+  	}
+}
+
+.row [class*="col-xs"]:first-child {
+	border-left: 1px solid;
+}
+
+.row p.small {
+	text-align: left;
+}
+
+.img-centered {
+	align-items:center;
+}
