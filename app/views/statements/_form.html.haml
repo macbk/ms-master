@@ -4,11 +4,17 @@
 		%ul
 			- @statement.errors.full_messages.each do |msg|
 				%li= msg
-	= f.label :crs
-	%br
-	= f.text_field :crs, class: 'form-control'
-	= f.label :sot
-	%br
-	= f.text_field :sot, class: 'form-control'
+	.form-group
+		= f.label :crs
+		= f.text_field :crs, class: 'form-control'
+	.form-group
+		= f.label :sot
+		= f.text_field :sot, class: 'form-control'
+	%h3 Tasks
+	#tasks
+		= f.fields_for :tasks do |task|
+			= render 'task_fields', f: task
+		.links
+			= link_to_add_association 'Add Task', f, :tasks, class: 'btn btn-default'
 	%br
 	= f.submit 'Create MS', class: 'btn btn-primary'

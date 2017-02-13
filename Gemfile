@@ -35,6 +35,7 @@ gem 'haml'
 gem 'bootstrap-sass', '~> 3.3.6'
 gem 'wicked_pdf'
 gem 'wkhtmltopdf-binary'
+gem "cocoon"
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development

@@ -1,6 +1,10 @@
 class StatementsController < ApplicationController
 	before_action :find_statement, only: [:show, :edit, :update, :destroy]
 
+	def index
+		@statements = Statement.all
+	end
+
 	def show
 		respond_to do |format|
 			format.html
@@ -32,6 +36,11 @@ class StatementsController < ApplicationController
 	end
 
 	def update
+		if @statement.update(statement_params)
+			redirect_to @statement
+		else
+			render 'edit'
+		end
 	end
 
 	def destroy
@@ -40,7 +49,7 @@ class StatementsController < ApplicationController
 	private
 
 	def statement_params
-		params.require(:statement).permit(:sot, :crs)
+		params.require(:statement).permit(:sot, :crs, tasks_attributes: [:id, :title, :term, :_destroy])
 	end
 
 	def find_statement
