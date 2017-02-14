@@ -2,8 +2,8 @@
 	.nested-fields
 		.form-group
 			= f.label :title
-			= f.text_field :title
+			= f.text_field :title, class: 'form-control'
 		.form-group
 			= f.label :term
-			= f.text_field :term
+			= f.text_field :term, class: 'form-control'
 		= link_to_remove_association "remove task", f

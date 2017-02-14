@@ -1,13 +1,17 @@
-%h4= @statement.helicopter.registration
-%h3= @statement.crs
+%h3= @statement.helicopter.registration
+%hr
+%h4= @statement.crs
 %h5 Tasks
 %ul
 	- @statement.tasks.each do |task|
 		%li
 			= task.title
 			= task.term
-
-= link_to 'Create PDF', statement_path(@statement, :format => :pdf)
+%hr
+= link_to 'Back', select_path, class: 'btn btn-default'
+= link_to 'Edit', edit_statement_path, class: 'btn btn-default'
+= link_to 'Delete', statement_path, method: :delete, class: 'btn btn-default', data: { confirm: 'Are you sure?'}
+= link_to 'Create PDF', statement_path(@statement, :format => :pdf), class: 'btn btn-default'
 
 /= render 'printout'
 %br

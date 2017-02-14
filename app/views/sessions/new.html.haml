@@ -5,3 +5,5 @@
 	= f.collection_select(:id, Helicopter.all, :id, :registration, { prompt: 'Select a helicopter' }, { class: 'form-control' })
 	%br
 	= f.button 'New', class: 'btn btn-primary'
+%hr
+= render @statements

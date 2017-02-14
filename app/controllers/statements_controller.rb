@@ -1,10 +1,6 @@
 class StatementsController < ApplicationController
 	before_action :find_statement, only: [:show, :edit, :update, :destroy]
 
-	def index
-		@statements = Statement.all
-	end
-
 	def show
 		respond_to do |format|
 			format.html
@@ -44,6 +40,8 @@ class StatementsController < ApplicationController
 	end
 
 	def destroy
+		@statement.destroy
+		redirect_to select_path
 	end
 
 	private
