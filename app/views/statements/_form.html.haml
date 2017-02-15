@@ -1,7 +1,7 @@
 = form_for(@statement) do |f|
 	- if @statement.errors.any?
-		= pluralize(@statement.errors.count, "error")
-		%ul
+		%ul.alert.alert-warning
+			%b= pluralize(@statement.errors.count, "error")
 			- @statement.errors.full_messages.each do |msg|
 				%li= msg
 	.form-group
@@ -11,12 +11,12 @@
 		= f.label :sot
 		= f.text_field :sot, class: 'form-control'
 	.form-group
-		%b Tasks
+		%label Tasks
 		#tasks
 			= f.fields_for :tasks do |task|
 				= render 'task_fields', f: task
 			.links
-				= link_to_add_association 'Add Task', f, :tasks, class: 'btn btn-default'
+				= link_to_add_association 'Add Task', f, :tasks, class: 'btn btn-success'
 	%hr
 	= link_to 'Back', select_path, class: 'btn btn-default'
 	= f.submit class: 'btn btn-primary'

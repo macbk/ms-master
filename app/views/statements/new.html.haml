@@ -1,6 +1,6 @@
-%h1 New MS
-= @current_helicopter.registration
-= @current_helicopter.serial_number
-= @current_helicopter.last_ms+1
+%h2 MS-#{ @current_helicopter.registration[-3, 3] }-#{ @current_helicopter.last_ms.to_s.rjust(3, '0') }
+%h5
+	= @current_helicopter.registration
+	= @current_helicopter.serial_number	
 %hr
 = render 'statements/form'
