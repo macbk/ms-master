@@ -16,7 +16,9 @@
 			= f.fields_for :tasks do |task|
 				= render 'task_fields', f: task
 			.links
-				= link_to_add_association 'Add Task', f, :tasks, class: 'btn btn-success'
+				= link_to_add_association f, :tasks, class: 'btn btn-success' do
+					%span.glyphicon.glyphicon-plus
+					Add task
 	%hr
 	= link_to 'Back', select_path, class: 'btn btn-default'
 	= f.submit class: 'btn btn-primary'
