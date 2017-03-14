@@ -1,6 +1,6 @@
 %h3= @statement.helicopter.registration
+%h5 MS-#{ @statement.helicopter.registration[-3, 3] }-#{ @statement.helicopter.last_ms.to_s.rjust(3, '0') } | Created by Elon
 %hr
-%h4= @statement.crs
 %h5 Tasks
 %ul
 	- @statement.tasks.each do |task|

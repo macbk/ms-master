@@ -11,22 +11,32 @@
  * It is generally better to create a new file per style scope.
  *
  */
+ 
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
-.row {
-	border-bottom:1px solid;
-	display: flex;
+/*
+ * Row with equal height columns
+ * --------------------------------------------------
+ */
+.row-eq-height {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
 }
-
+.row {
+	border-left:1px solid;
+	border-right:1px solid;
+	border-bottom:1px solid;
+}
 .row:first-child {
 	border-top:1px solid;
 }
-
-.row [class*="col-xs"] {
-	border-right: 1px solid;
+[class*='col-xs'] {
+	border-left: 1px solid;
 	text-align: center;
-	display:flex;
+	display: flex;
   	flex-direction:column;
   	justify-content:center;
   	.row {
@@ -34,15 +44,13 @@
   		border-bottom:0px solid;
   	}
 }
-
 .row [class*="col-xs"]:first-child {
-	border-left: 1px solid;
+	border-left: 0px;
 }
-
 .row p.small {
 	text-align: left;
 }
-
 .img-centered {
 	align-items:center;
+	padding: 1px;
 }

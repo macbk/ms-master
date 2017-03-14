@@ -7,7 +7,8 @@ class StatementsController < ApplicationController
 			format.pdf do
 				render pdf: "MaintenanceStatement",
 				template: "statements/show.pdf.haml",
-				locals: {:statement => @statement}
+				locals: {:statement => @statement},
+				encoding: "UTF-8"
 			end
 		end
 	end

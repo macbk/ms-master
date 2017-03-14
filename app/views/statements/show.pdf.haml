@@ -1,4 +1,161 @@
-%h1 To jest PDF
-%hr
-%h4= @statement.helicopter.registration
-%h3= @statement.crs
+!!! 5
+%html
+	%head
+		%title MsMaster
+		= wicked_pdf_stylesheet_link_tag "application"
+	%body
+		.container
+			.row.row-eq-height
+				.col-xs-4.img-centered
+					= wicked_pdf_image_tag("logo_super.jpg", alt: "Logo", width: "103", height: "100")
+				.col-xs-4
+					LOTNICZE POGOTOWIE RATUNKOWE
+				.col-xs-4
+					ul. Księżycowa 5
+					%br
+					01-934 Warszawa
+					%br
+					Certyfikat Part M Podczesc G PL.MG.005
+			.row.row-eq-height
+				.col-xs-12
+					%h4
+						%b ŚWIADECTWO OBSŁUGI TECHNICZNEJ
+						%br
+						(MAINTENANCE STATEMENT)
+					%h3
+						MS Nr:
+						%b MS-#{ @statement.helicopter.registration[-3, 3] }-#{ @statement.helicopter.last_ms.to_s.rjust(3, '0') }
+			.row.row-eq-height
+				.col-xs-4
+					%b Typ statku powietrznego:
+					
+					(Aircraft type):
+				.col-xs-8
+					EC 135 P3
+			.row.row-eq-height
+				.col-xs-4
+					%b Znaki rozpoznawcze:
+					%br
+					(Tail number)
+				.col-xs-8
+					SP-DXD
+			.row.row-eq-height
+				.col-xs-4
+					%b Numer fabryczny:
+					%br
+					(Serial number)
+				.col-xs-8
+					1209
+			.row
+				.col-xs-12
+					%p.small
+						%b Oświadczenie (Statement):
+						%br
+						Oświadczam, że planowa hangarowa obsługa techniczna statku powietrznego o danych wymienionych powyżej, wykonana według:
+						%br
+						%i
+							Programu Obsługi Technicznej nr 
+							%b PROBT- EC135
+							zmiana nr.
+							%b 18 ZP
+						%br
+						jest ważna do czasu osiągnięcia parametrów określających jego eksploatację, podanych w Ograniczeniach Zdatności	do Lotu.
+						%br
+					%p.small
+						I declare, that the base maintenance of aircraft identified above, done according to:
+						%br
+						%i
+							Maintenance Programme n°
+							%b PROBT- EC135
+							revision no.
+							%b 18 ZP
+						%br
+						is valid until reaching parameters defining exploatation, given in the Due Task Limitations.
+			.row.row-eq-height
+				.col-xs-4
+					%b Nr CRS
+					%br
+					(CRS Number)
+				.col-xs-4
+					%b Organizacja wykonująca
+					%br
+					(Maintenance Organization)
+				.col-xs-4
+					%b Nr certyfikatu organizacji
+					%br
+					(Organization Number)
+			.row.row-eq-height
+				.col-xs-4
+					%b 001/001/DXA/01
+				.col-xs-4
+					%b SOT Szczecin
+				.col-xs-4
+					%b PL.145.022
+			.row.row-eq-height
+				.col-xs-6.img-centered
+					= image_tag("signature.png", alt: "Engineer", width: "200", height: "90")
+					%p (Nazwisko i podpis oświadczającego)
+				.col-xs-6.img-centered
+					= image_tag("signature.png", alt: "CompanyStamp", width: "200", height: "90")
+					%p (Pieczęć firmowa - Company stamp)
+		/DRUGA STRONA
+		.container
+			.row.row-eq-height
+				.col-xs-2.img-centered
+					= image_tag("logo_super.jpg", alt: "Logo-small", width: "65", height: "62")
+				.col-xs-10
+					OGRANICZENIA ZDATNOŚCI SP DO LOTU MS Nr:
+					%b MS-DXA-003
+					%br
+					(DUE TASK LIMITATION - MS N°)
+			.row
+				.col-xs-12
+					%b Statek Powietrzny zachowuje zdatność do lotu pod warunkiem usunięcia podanych niżej ograniczeń przez wykonanie podanych czynności obsługowych:
+					%br
+					(The aircraft will keep airworthiness on condition of removing below given limitations by complying with the written maintenance tasks)
+			.row.row-eq-height
+				.col-xs-1
+					%b Lp
+					%br
+					Item
+				.col-xs-3
+					%b Czynności obsługowe
+					%br
+					(Maintenance task)
+				.col-xs-2
+					%b Termin wykonania
+					%br
+					(Term to comply with)
+				.col-xs-6
+					%b Potwierdzenie wykonania obsługi
+					%br
+					(Confirmation of done maintenance)
+					.row.row-eq-height
+						.col-xs-4
+							%b Nr CRS
+							%br
+							(CRS no.)
+						.col-xs-4
+							%b Data
+							%br
+							(Date)
+						.col-xs-4
+							%b Podpis CAMO
+							%br
+							(Signature)
+			.row.row-eq-height
+				.col-xs-1
+					1.
+				.col-xs-3
+				.col-xs-2
+				.col-xs-2
+				.col-xs-2
+				.col-xs-2
+			.row.row-eq-height
+				.col-xs-1
+					2.
+				.col-xs-3
+				.col-xs-2
+				.col-xs-2
+				.col-xs-2
+				.col-xs-2
